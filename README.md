@@ -30,7 +30,7 @@ This project was built as part of an internship assignment to demonstrate fronte
 
 ## 📂 Project Structure
 
-``text
+```text
 app/
 ├─ page.tsx
 ├─ layout.tsx
