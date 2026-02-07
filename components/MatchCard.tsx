@@ -11,10 +11,12 @@ export default function MatchCard({ match, onClick }: Props) {
 
   return (
     <div
-      className={`relative flex items-center justify-between
-      rounded-2xl px-6 py-4
-      border border-white/5
-      transition-all duration-300
+      className={` relative flex flex-col md:flex-row
+    md:items-center md:justify-between
+    gap-4
+    rounded-2xl px-6 py-4
+    border border-black/10 dark:border-white/5
+    transition-all duration-300
       ${
         isWin
           ? "bg-linear-to-r from-emerald-900/20 to-black"
@@ -67,8 +69,10 @@ export default function MatchCard({ match, onClick }: Props) {
       {/* RIGHT: Details */}
       <button
         onClick={onClick}
-        className={`ml-6 px-5 py-2 rounded-lg text-sm font-semibold
-        transition cursor-pointer
+        className={`w-full md:w-auto
+            md:ml-6
+            px-5 py-2 rounded-lg text-sm font-semibold
+            transition cursor-pointer
         ${
           isWin
             ? "bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30"
