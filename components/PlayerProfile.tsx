@@ -20,7 +20,7 @@ export default function PlayerProfile({ player }: Props) {
         {/* LEFT SIDE */}
         <div className="flex gap-5 items-center">
           {/* Avatar */}
-          <div className="relative w-40 h-40 rounded-xl overflow-hidden border border-cyan-400/30">
+          <div className="relative w-30 h-30 md:w-40 md:h-40 rounded-xl overflow-hidden border border-cyan-400/30">
             <Image
               src={player.player_card_link}
               alt={player.player_name}
