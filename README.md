@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ValoCoach – Player Performance Dashboard
 
-## Getting Started
+ValoCoach is a frontend-only player performance dashboard inspired by competitive FPS game HUDs.  
+It visualizes player stats, match history, and detailed match breakdowns in a clean, game-style UI.
 
-First, run the development server:
+This project was built as part of an internship assignment to demonstrate frontend skills, component structuring, and UI design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+- Player profile overview (name, rank, level, stats)
+- Recent matches list with win / loss indicators
+- Match filtering (All, Won, Lost)
+- Detailed match modal with performance metrics
+- Game-inspired HUD-style UI
+- Responsive design (desktop & mobile)
+
+---
+
+## 🛠 Tech Stack
+
+- **Next.js (App Router)**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **JSON-based mock data**
+
+---
+
+## 📂 Project Structure
+
+``text
+app/
+├─ page.tsx
+├─ layout.tsx
+├─ globals.css
+
+components/
+├─ Header.tsx
+├─ PlayerProfile.tsx
+├─ MatchList.tsx
+├─ MatchCard.tsx
+├─ MatchModal.tsx
+
+data/
+├─ player.json
+
+types/
+├─ player.ts
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📊 Data Handling
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Player and match data are stored locally in a JSON file
+- Strong typing is enforced using TypeScript interfaces
+- Components consume data via props for clear data flow
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Design Approach
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Focused on clarity and readability of stats
+- Inspired by in-game HUD and esports dashboards
+- Emphasis on visual hierarchy and component reusability
+- Minimal animations to keep UI performant and clean
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Install dependencies
+   ```bash
+   npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Run the development server
+   ```bash
+   npm run dev
+
+3. Open in Browser
+   ```bash
+   http://localhost:3000
