@@ -7,20 +7,49 @@ interface Props {
 
 export default function PlayerProfile({ player }: Props) {
   return (
-    <section className="relative rounded-2xl p-6 md:p-8 
-      bg-linear-to-br from-[#281414] via-[#1a0f0f] to-[#221b3a]
-      border border-white/5 shadow-xl overflow-hidden">
-
+    <section
+      className="
+        relative rounded-2xl p-5 md:p-8
+        bg-linear-to-br from-[#281414] via-[#1a0f0f] to-[#221b3a]
+        border border-white/5 shadow-xl overflow-hidden
+      "
+    >
       {/* Glow accent */}
-      <div className="absolute inset-0 pointer-events-none 
-        bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.15),transparent_40%)]" />
+      <div
+        className="
+          absolute inset-0 pointer-events-none
+          bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.15),transparent_40%)]
+        "
+      />
 
-      <div className="relative flex flex-col lg:flex-row gap-6 lg:gap-10 items-start lg:items-center justify-between">
-
+      <div
+        className="
+          relative flex flex-col lg:flex-row
+          gap-6 lg:gap-10
+          items-center lg:items-start
+          justify-between
+        "
+      >
         {/* LEFT SIDE */}
-        <div className="flex gap-5 items-center">
+        <div
+          className="
+            flex flex-col sm:flex-row
+            gap-4 sm:gap-5
+            items-center sm:items-start
+            text-center sm:text-left
+          "
+        >
           {/* Avatar */}
-          <div className="relative w-30 h-30 md:w-40 md:h-40 rounded-xl overflow-hidden border border-cyan-400/30">
+          <div
+            className="
+              relative
+              w-24 h-24
+              sm:w-32 sm:h-32
+              md:w-40 md:h-40
+              rounded-xl overflow-hidden
+              border border-cyan-400/30
+            "
+          >
             <Image
               src={player.player_card_link}
               alt={player.player_name}
@@ -31,7 +60,7 @@ export default function PlayerProfile({ player }: Props) {
 
           {/* Player Info */}
           <div>
-            <h1 className="text-2xl font-bold tracking-wide">
+            <h1 className="text-xl sm:text-2xl font-bold tracking-wide">
               {player.player_name}
             </h1>
 
@@ -39,9 +68,18 @@ export default function PlayerProfile({ player }: Props) {
               Level {player.player_account_level} · Competitive Player
             </p>
 
-            <div className="flex items-center gap-3 mt-3">
-              <span className="px-3 py-1 text-xs font-semibold rounded-md 
-                bg-red-500/10 border border-red-400/30 text-red-400">
+            <div
+              className="
+                flex flex-wrap justify-center sm:justify-start
+                items-center gap-3 mt-3
+              "
+            >
+              <span
+                className="
+                  px-3 py-1 text-xs font-semibold rounded-md
+                  bg-red-500/10 border border-red-400/30 text-red-400
+                "
+              >
                 {player.current_rank}
               </span>
 
@@ -51,14 +89,29 @@ export default function PlayerProfile({ player }: Props) {
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-3 mt-4">
-              <button className="px-4 py-2 text-sm font-semibold rounded-md 
-                bg-red-600 hover:bg-red-500 transition">
+            <div
+              className="
+                flex flex-col sm:flex-row
+                gap-3 mt-4
+              "
+            >
+              <button
+                className="
+                  w-full sm:w-auto
+                  px-4 py-2 text-sm font-semibold rounded-md
+                  bg-red-600 hover:bg-red-500 transition
+                "
+              >
                 Refresh Stats
               </button>
 
-              <button className="px-4 py-2 text-sm font-semibold rounded-md 
-                bg-white/5 border border-white/10 hover:bg-white/10 transition">
+              <button
+                className="
+                  w-full sm:w-auto
+                  px-4 py-2 text-sm font-semibold rounded-md
+                  bg-white/5 border border-white/10 hover:bg-white/10 transition
+                "
+              >
                 Share Profile
               </button>
             </div>
@@ -66,7 +119,13 @@ export default function PlayerProfile({ player }: Props) {
         </div>
 
         {/* RIGHT SIDE – STATS */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full lg:w-auto">
+        <div
+          className="
+            grid grid-cols-2 sm:grid-cols-4
+            gap-3 sm:gap-4
+            w-full lg:w-auto
+          "
+        >
           <StatBox
             label="K/D Ratio"
             value={player.overall_kd_ratio.toFixed(2)}
@@ -82,13 +141,12 @@ export default function PlayerProfile({ player }: Props) {
             value={`${player.overall_headshot_percentage}%`}
             color="text-red-400"
           />
-           <StatBox
+          <StatBox
             label="ACS"
             value={player.overall_ACS.toFixed(0)}
             color="text-emerald-400"
           />
         </div>
-
       </div>
     </section>
   );
@@ -105,11 +163,18 @@ function StatBox({
   color: string;
 }) {
   return (
-    <div className="rounded-xl px-5 py-4 bg-black/30 border border-white/5 text-center min-w-[110px]">
+    <div
+      className="
+        rounded-xl
+        px-4 py-3 sm:px-5 sm:py-4
+        bg-black/30 border border-white/5
+        text-center
+      "
+    >
       <p className="text-xs uppercase tracking-wider text-gray-400">
         {label}
       </p>
-      <p className={`mt-2 text-xl font-bold ${color}`}>
+      <p className={`mt-1 sm:mt-2 text-lg sm:text-xl font-bold ${color}`}>
         {value}
       </p>
     </div>
